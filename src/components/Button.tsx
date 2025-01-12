@@ -3,11 +3,11 @@ import Marker from "./Marker";
 
 interface Props {
   icon: string;
-  children: string;
-  href: string;
-  containerClassName: string;
-  onClick: () => void;
-  markerFill: string;
+  children?: string;
+  href?: string;
+  containerClassName?: string;
+  onClick?: () => void;
+  markerFill?: string;
 }
 
 const Button = ({
@@ -35,6 +35,8 @@ const Button = ({
           {children}
         </span>
       </span>
+
+      <span className="glow-before glow-after" />
     </>
   );
 
@@ -51,7 +53,7 @@ const Button = ({
   ) : (
     <button
       className={clsx(
-        "relative, p-0.5 g5 rounded-2xl shadow-500 group",
+        "relative p-0.5 g5 rounded-2xl shadow-500 group",
         containerClassName
       )}
       onClick={onClick}
